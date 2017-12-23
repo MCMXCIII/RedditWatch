@@ -1,14 +1,14 @@
 import praw
 
-reddit = praw.Reddit(client_id='svuvBEZgEgZhOA',
-                     client_secret='nn7D2e6ITDlkKE1PZy6W6VUUKaQ',
+reddit = praw.Reddit(client_id='Your Client ID',
+                     client_secret='Your API Secret',
                      user_agent='something like firefox',
-                     username='Watcher_Bot',
+                     username='Whatever Username you Have',
                      password='1234512345')
 
 def alert():
      message = "Submission:\n\n"
-     for submission in reddit.subreddit('BaltimoreAndDCr4r').new(limit=100):
+     for submission in reddit.subreddit('Some_Subreddit').new(limit=100):
      	if "F4M" in submission.title:
     		message = message + "[" + submission.title + "](" + submission.url + ")\n\n"
      return message
